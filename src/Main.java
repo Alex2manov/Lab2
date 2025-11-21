@@ -9,39 +9,39 @@ import org.json.JSONObject;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Создаем полного клиента (наследник от ClientLITTLE)
-        ClientLITTLE little1 = new ClientLITTLE(1, "Саша", "Туманов");
-        Client client1 = new Client(little1, "+79981234567", "alex@gmail.com");
-        System.out.println("Полная версия client1:");
-        System.out.println(client1);
-        System.out.println("Краткая версия client1:");
-        System.out.println(little1);
-        System.out.println();
+        ClientRepository jsonRepo = new Client_rep_json("clients.json");
+        testRepository(jsonRepo, "JSON");
 
-        // 2. Создаем клиента из строки
-        String data = "2;Анна;Кузнецова;+79982345678;anna@mail.ru";
-        Client client2 = new Client(data);
-        System.out.println("Полная версия client2:");
-        System.out.println(client2);
-        System.out.println("Краткая версия client2:");
-        System.out.println(client2.toShortString());
-        System.out.println();
+        ClientRepository yamlRepo = new Client_rep_yaml("clients.yaml");
+        testRepository(yamlRepo, "YAML");
 
-        try {
-            try (InputStream is = Main.class.getResourceAsStream("Client.json")) {
-                if (is != null) {
-                    String jsonString = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                    JSONObject json = new JSONObject(jsonString);
-                    Client readerFromFile = new Client(json);
-                    System.out.println("Client (JSON): " + (readerFromFile));
-                    return;
-                }
+        jsonRepo.saveToFile();
+        yamlRepo.saveToFile();
+        System.out.println("\nДанные сохранены в оба формата");
+    }
 
-                System.err.println("Файл Client.json не найден в ресурсах");
-            }
+    private static void testRepository(ClientRepository repo, String format) {
+        System.out.println("Всего клиентов в " + format + ": " + repo.get_count());
 
-        } catch (Exception e) {
-            System.err.println("Ошибка чтения файла: " + e.getMessage());
+        // Получение по ID
+        Client client = repo.getById(1);
+        System.out.println("Клиент с ID=1: " + client);
+
+        // Пагинация
+        var shortList = repo.get_k_n_short_list(2, 1);
+        System.out.println("Первые 2 кратких клиента:");
+        for (var shortClient : shortList) {
+            System.out.println("  - " + shortClient.toShortString());
         }
+
+        // Добавление нового клиента
+        repo.addClient("Новый", "Клиент", "+79940000000", "new240@client.ru");
+        System.out.println("Добавлен новый клиент. Теперь всего: " + repo.get_count());
+
+        // Сортировка
+        repo.sortByField("lastname");
+        System.out.println("После сортировки по фамилии:");
+        repo.printAllClients();
+
     }
 }

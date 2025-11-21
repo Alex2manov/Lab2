@@ -1,0 +1,44 @@
+{"clients": [
+    {
+        "firstName": "Новый",
+        "lastName": "FКлиент",
+        "phone": "+79910000000",
+        "ClientId": 1,
+        "email": "new1@client.ru"
+    },
+    {
+        "firstName": "Новый",
+        "lastName": "FКлиент",
+        "phone": "+79990000000",
+        "ClientId": 2,
+        "email": "new@client.ru"
+    },
+    {
+        "firstName": "Новый",
+        "lastName": "MКлиент",
+        "phone": "+79900000000",
+        "ClientId": 3,
+        "email": "new0@client.ru"
+    },
+    {
+        "firstName": "MНовый",
+        "lastName": "Клиент",
+        "phone": "+79920000000",
+        "ClientId": 4,
+        "email": "new20@client.ru"
+    },
+    {
+        "firstName": "Новый",
+        "lastName": "МКлиент",
+        "phone": "+79930000000",
+        "ClientId": 5,
+        "email": "new230@client.ru"
+    },
+    {
+        "firstName": "Новый",
+        "lastName": "Клиент",
+        "phone": "+79940000000",
+        "ClientId": 6,
+        "email": "new240@client.ru"
+    }
+]}

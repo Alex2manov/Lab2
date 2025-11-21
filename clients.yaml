@@ -1,0 +1,7 @@
+clients:
+- {ClientId: 1, firstName: Новиый, lastName: Клиент, phone: '+79910000000', email: new1@client.ru}
+- {ClientId: 2, firstName: Новый, lastName: Клиент, phone: '+79990000000', email: new@client.ru}
+- {ClientId: 3, firstName: Новый, lastName: Клиент, phone: '+79900000000', email: new0@client.ru}
+- {ClientId: 4, firstName: Новый, lastName: Клиент, phone: '+79920000000', email: new20@client.ru}
+- {ClientId: 5, firstName: Новый, lastName: Клиент, phone: '+79930000000', email: new230@client.ru}
+- {ClientId: 6, firstName: Новый, lastName: Клиент, phone: '+79940000000', email: new240@client.ru}
