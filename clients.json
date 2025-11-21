@@ -1,0 +1,37 @@
+{"clients": [
+    {
+        "firstName": "Екатерина",
+        "lastName": "Волкова",
+        "phone": "+79994445566",
+        "ClientId": 5,
+        "email": "ekaterina@mail.ru"
+    },
+    {
+        "firstName": "Анна",
+        "lastName": "Морозова",
+        "phone": "+79996667788",
+        "ClientId": 4,
+        "email": "anna.morozova@company.com"
+    },
+    {
+        "firstName": "Иван",
+        "lastName": "Петров",
+        "phone": "+79991112233",
+        "ClientId": 1,
+        "email": "ivan@mail.ru"
+    },
+    {
+        "firstName": "Мария",
+        "lastName": "Сидорова",
+        "phone": "+79992223344",
+        "ClientId": 2,
+        "email": "maria.new@company.ru"
+    },
+    {
+        "firstName": "Екатерина",
+        "lastName": "Волкова",
+        "phone": "+79994445566",
+        "ClientId": 6,
+        "email": "ekaterina@mail.ru"
+    }
+]}

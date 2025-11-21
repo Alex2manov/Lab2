@@ -1,0 +1,7 @@
+{
+  "ClientId": 12345,
+  "firstName": "Иван",
+  "lastName": "Иванов",
+  "phone": "+7 (999) 123-94-17",
+  "email": "ivanov@example.com"
+}
